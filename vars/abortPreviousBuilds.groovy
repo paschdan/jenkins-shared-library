@@ -15,7 +15,8 @@ def call() {
                     "Aborted by newer build #${currentBuild.number}"
                 ))
             }
-	   sleep(time: 10, unit: 'SECONDS')
+	   echo "Sleeping 1s"
+	   Thread.sleep(1000)
         } else {
             previousBuild = previousBuild.getPreviousBuildInProgress()
         }
